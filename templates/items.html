@@ -1,0 +1,30 @@
+<section class="col-md-9">
+	<h1>Items ({{itemcount}})</h1>
+	{% if 'user_id' in session %}
+		<a class="btn btn-success"  href="{{url_for('create_new_item', category_id = category_id)}}">Add New</a>
+	{% endif %}
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %}
+		<div class="alert alert-success">
+		  <strong>{{message}}</strong>
+		 </div>
+			
+		{% endfor %}
+
+	{% endif %}
+	{% endwith %}
+
+	<div class="list-group">
+	{% for item in items %}
+			<a class="list-group-item" href="{{url_for('show_item', item_id = item.id, category_id = category_id)}}">{{item.name}}</a>
+	{% endfor %}
+
+	{% if itemcount == 0 %}
+		<div class="alert alert-warning">
+		  <strong>There is no item in this category</strong> 
+		</div>
+	{% endif %}
+
+	</div>
+</section>

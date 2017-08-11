@@ -1,0 +1,96 @@
+body {
+	color: #525c65;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5rem;
+    margin: 0;
+   	background-color: #eeeeee;
+}
+
+a {
+	text-decoration: none;
+}
+
+.header {
+	background-color: #02ccba;
+	height: 4.5rem;
+    padding: 0 1.5em;
+    
+}
+
+.row {
+	width: 80%;
+    margin-top: 20px;
+    margin-left: 20%;
+}
+
+.section-left {
+	text-align: center;
+
+
+}
+
+.section-right {
+
+	text-align: center;
+
+}
+.category-row{
+	width: 100%;
+}
+.center-panel {
+	text-align: center;	
+  	margin: 0 auto;
+	padding: 30px;
+	margin: 30px
+}
+.category-item {
+
+	background: white;
+    height: 48px;
+    margin: 10px;
+
+}
+.button {
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 8px 10px 20px 0px rgba(46,61,73,0.15);
+    padding-top: 0px;    
+    padding-bottom: 0px;
+    border: 0.125rem solid transparent;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.right-align {
+	margin-right: 30px;
+	margin-top: 5px;
+}
+.logout-btn {
+	float: right;
+	color: #fff;
+	margin: 20px;
+    background-color: red;
+}
+
+.login-btn {
+	float: right;
+}
+
+.add-new-btn {		
+	
+	color: #fff;
+    background-color: green;
+}
+
+.table-title {
+	display: inline;
+	margin-top: 50px;
+}
+
+.login-panel{
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 25px;
+}

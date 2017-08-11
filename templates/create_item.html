@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="panel panel-default center-panel">
+
+
+		<form method="post" action="{{url_for('create_new_item', category_id = category_id)}}">
+			<div class="form-group">
+			    <label >Name:</label>
+			    <input type="text" class="form-control" name="name">
+		  	</div>
+			<div class="form-group">
+			    <label >Description:</label>
+			    <input type="text" class="form-control" name="description">
+		  	</div>
+			<div class="form-group">
+		  		
+		  		 
+                <label >Category:</label>
+                <select  class="form-control" name="category">
+                {% for c in categories %}
+                    <option value="{{c.id}}">{{c.name}}</option>
+                {% endfor %}
+                </select>
+            
+		  	</div>
+			<button type="submit" class="btn btn-success">SAVE</button>
+
+
+                	{% if 0 == category_id %}
+                    	<a href="{{url_for('show_latest_catalog')}}">
+			                    <button type="button" class="btn btn-default">Cancel</button>
+			            </a>
+                    {% else %}
+                    	<a href="{{url_for('show_catalog', id=category_id)}}">
+			                    <button type="button" class="btn btn-default">Cancel</button>
+			            </a>
+                	{% endif%}
+            
+			 
+		</form>
+   </div>
+{% endblock %}
+
+
+
+
+
+
+

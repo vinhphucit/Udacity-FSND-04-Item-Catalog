@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block body %}
+	<div class="panel panel-default center-panel">
+		<h1>Delete Item</h1>
+		<div class="alert alert-danger">
+		  <strong>Are you sure you want to delete {{item.name}}?</strong>
+		</div>
+		<p></p>
+		<form method="post" action="{{ url_for('delete_item', item_id = item.id, category_id = category_id)}}">
+		<input type="hidden" name="category_id" value="{{item.category_id}}">
+		<button type="submit" class="btn btn-danger">Delete</button>
+		 	{% if category_id == 0 %}
+            	<a href="{{url_for('show_latest_catalog')}}">
+	                    <button type="button" class="btn btn-default">Cancel</button>
+	            </a>
+            {% else %}
+            	<a href="{{url_for('show_catalog', id=category_id)}}">
+	                    <button type="button" class="btn btn-default">Cancel</button>
+	            </a>
+        	{% endif%}
+		</form>
+   </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+<section class="col-md-3">
+	<h1 >Categories</h1>
+	<div class="list-group">
+	{% for category in categories %}		
+		{% if category_id == category.id %}
+			<a class="list-group-item active" href="{{url_for('show_catalog', id = category.id)}}">{{category.name + " (" + (category.items|length)|string + ")"}}</a>
+		{% else %}
+			<a class="list-group-item" href="{{url_for('show_catalog', id = category.id)}}">{{category.name + " (" + (category.items|length)|string + ")"}}</a>
+
+		{% endif %}
+	{% endfor %}
+	</div>
+</section>
